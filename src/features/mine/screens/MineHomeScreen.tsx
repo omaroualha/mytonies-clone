@@ -1,13 +1,13 @@
-import { images } from "@/assets";
-import { Box, Headline } from "@/components";
 import React, { FC } from "react";
 import { ImageBackground, ScrollView, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useTheme } from "styled-components";
-import { MineItem, MineItemProps } from "../components/MineItem";
+import { useTheme } from "styled-components/native";
+import { Box, Headline } from "@/components";
+import { images } from "@/assets";
 import { MineStackScreenProps } from "../MineStack";
+import { MineItem, MineItemProps } from "../components/MineItem";
 
-export type MineHomeScreenProps = MineStackScreenProps<"Home">;
+export type MineHomeScreenProps = MineStackScreenProps<"MineHome">;
 
 export const MineHomeScreen: FC<MineHomeScreenProps> = ({ navigation }) => {
   const theme = useTheme();
@@ -36,29 +36,14 @@ export const MineHomeScreen: FC<MineHomeScreenProps> = ({ navigation }) => {
   return (
     <Box flex={1} backgroundColor={theme.colors.primary.light}>
       <Box height={insets.top} style={styles.blurView} />
-      {/* <Box widt={"80%"} height="100%" flex={1} zIndex={10}> */}
-      {/* <SVGShape /> */}
-      {/* </Box> */}
       <ScrollView>
         <ImageBackground
           source={images.mineShapeBG}
-          style={{
-            width: 170,
-            // zIndex: 10,
-            height: 130,
-
-            position: "absolute",
-            right: 0,
-          }}
+          style={styles.shapeBackground}
         ></ImageBackground>
 
         <Box flex={1} pt={insets.top} px="L">
-          <Box
-            flexDirection={"row"}
-            flex={1}
-            // backgroundColor="yellow"
-            justifyContent={"space-between"}
-          >
+          <Box flex={1} flexDirection={"row"} justifyContent={"space-between"}>
             <Headline variant="HS">Mine</Headline>
           </Box>
           {mines.map((mine, index) => (
@@ -78,6 +63,12 @@ const styles = StyleSheet.create({
     zIndex: 1,
     top: 0,
     left: 0,
+    right: 0,
+  },
+  shapeBackground: {
+    width: 170,
+    height: 130,
+    position: "absolute",
     right: 0,
   },
 });

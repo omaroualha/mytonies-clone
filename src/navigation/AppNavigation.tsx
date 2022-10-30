@@ -6,9 +6,6 @@ import { Box, Webview } from "@/components";
 export const AppNavigation: FC = () => {
   return (
     <NavigationContainer>
-      {/* <Box>
-        <Webview url="https://tonies.com/" title="home" />
-      </Box> */}
       <RootStackNavigator />
     </NavigationContainer>
   );

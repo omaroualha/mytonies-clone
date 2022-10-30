@@ -9,6 +9,8 @@ interface ParagraphProps extends TextProps {
 }
 
 export const Paragraph = styled(Text)<ParagraphProps>`
+  color: ${({ theme }) => theme.colors.primary.dark};
+
   ${(props) => {
     const { theme, variant } = props;
     const variantStyle = variant
@@ -25,4 +27,4 @@ export const Paragraph = styled(Text)<ParagraphProps>`
   ${typography}
 `;
 
-Paragraph.defaultProps = { variant: "P1", color: "primary.dark" };
+Paragraph.defaultProps = { variant: "P1" };

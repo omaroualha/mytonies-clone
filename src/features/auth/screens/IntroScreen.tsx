@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
-import { useTheme } from "styled-components";
+import { useTheme } from "styled-components/native";
 import { MaterialIcons } from "@expo/vector-icons";
-import { Box, Headline, Paragraph, Label } from "@/components";
+import { Box, Headline, Paragraph, Label, PrimaryButton } from "@/components";
 import { AuthStackScreenProps } from "../AuthStack";
 import { images } from "@/assets";
 import { BaseTheme } from "@/theme/BaseTheme";
@@ -43,18 +43,16 @@ export const IntroScreen: FC<IntroScreenProps> = ({ navigation }) => {
           </Label>
         </Box>
         <Box pb="M">
-          <TouchableOpacity
-            style={styles.button}
-            activeOpacity={0.4}
+          <PrimaryButton
+            label="Log in"
             onPress={handleLoginPress}
-          >
-            <Paragraph variant="P2">Log in</Paragraph>
-            <MaterialIcons name="navigate-next" size={24} color="black" />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={handleRegisterPress}>
-            <Paragraph variant="P2">Free registration</Paragraph>
-            <MaterialIcons name="navigate-next" size={24} color="black" />
-          </TouchableOpacity>
+            iconType="NEXT"
+          />
+          <PrimaryButton
+            label="Free registration"
+            onPress={handleRegisterPress}
+            iconType="NEXT"
+          />
         </Box>
       </Box>
     </Box>

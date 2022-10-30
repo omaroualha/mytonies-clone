@@ -12,9 +12,7 @@ import { Box, Webview } from "@/components";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
-  useEffect(() => {
-    <Webview url="https://tonies.com/" title="home" />;
-  }, []);
+
   if (!isLoadingComplete) {
     return null;
   } else {

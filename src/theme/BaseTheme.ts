@@ -1,4 +1,4 @@
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme } from "styled-components/native";
 export const BaseTheme: DefaultTheme = {
   colors: {
     primary: {
@@ -100,7 +100,7 @@ export const BaseTheme: DefaultTheme = {
       },
       P2: {
         fontFamily: "Museo-300",
-        fontSize: 14,
+        fontSize: 15,
         fontWeight: 400,
         fontStyle: "normal",
         letterSpacing: 0,

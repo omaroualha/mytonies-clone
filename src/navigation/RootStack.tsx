@@ -27,16 +27,6 @@ export type RootStackScreenNavigationProp<
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const RootStackNavigator = () => {
-  // useEffect(() => {
-  //   const getCokkie = async () =>
-  //     await CookieManager.get(
-  //       "https://login.tonies.com/auth/realms/tonies/protocol/openid-connect/auth?client_id=tonie-studio&kc_locale=en&redirect_uri=com.tonies.app%3A%2Foauthredirect&response_type=code&scope=openid+email+profile&webview=app&utm_source=app&cookieConsent=16",
-  //       true
-  //     );
-  //   const cookie = getCokkie();
-  //   console.log("cookie::", cookie);
-  // }, []);
-
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="AuthStack" component={AuthStack} />

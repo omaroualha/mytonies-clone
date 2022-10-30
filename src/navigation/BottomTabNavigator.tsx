@@ -1,15 +1,15 @@
 import React, { FC } from "react";
-import { useTheme } from "styled-components";
+import { useTheme } from "styled-components/native";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { Image, ImageSourcePropType } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackScreenProps } from "./RootStack";
 import { Box, Label } from "@/components";
-import { LoginScreen } from "@/features/auth/screens/LoginScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { commonStyles } from "@/commonStyles";
 import { icons } from "@/assets";
 import { MineStack } from "@/features/mine/MineStack";
+import { ExploreStack } from "@/features/explore/ExploreStack";
 
 export type RootTabParamList = {
   MineStack: undefined;
@@ -61,7 +61,7 @@ export const BottomTabs: FC = () => {
 
       <Tab.Screen
         name="ExploreStack"
-        component={LoginScreen}
+        component={ExploreStack}
         options={() => ({
           tabBarIcon: ({ focused }) => (
             <TabBarIcon
@@ -90,7 +90,6 @@ const TabBarIcon: FC<tabBarIconProps> = ({
   focused,
 }) => {
   const theme = useTheme();
-  console.log("focused", focused);
   return (
     <Box alignItems="center" justifyContent="center" top={15}>
       <Image

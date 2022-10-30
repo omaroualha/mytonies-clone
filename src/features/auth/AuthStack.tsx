@@ -23,9 +23,7 @@ export type AuthStackScreenProps<Screen extends keyof AuthStackParamList> =
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
-export const AuthStack: FC<AuthStackScreenProps<"Intro">> = ({
-  navigation,
-}) => {
+export const AuthStack: FC = () => {
   return (
     <Stack.Navigator
       initialRouteName="Intro"

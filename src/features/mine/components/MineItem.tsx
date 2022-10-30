@@ -2,7 +2,7 @@ import { Box, Headline, Label } from "@/components";
 import { AntDesign } from "@expo/vector-icons";
 import React, { FC } from "react";
 import { Image, ImageSourcePropType, StyleSheet } from "react-native";
-import { useTheme } from "styled-components";
+import { useTheme } from "styled-components/native";
 
 export type MineItemProps = {
   headline: string;
