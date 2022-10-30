@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { useTheme } from "styled-components";
+import { useTheme } from "styled-components/native";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { EvilIcons, Ionicons } from "@expo/vector-icons";
@@ -43,6 +43,7 @@ export const WebViewHeader: FC<WebViewHeaderProps> = (props) => {
       </Box>
       <Box flex={1} alignItems="flex-end">
         <TouchableOpacity
+          testID="close-button"
           onPress={() => navigation.goBack()}
           style={{
             width: 28,

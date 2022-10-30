@@ -80,6 +80,7 @@ export const Webview: FC<WebviewProps> = ({ url, title }) => {
         handleBackPress={handleBackButtonPress}
       />
       <WebView
+        testID="webview"
         ref={webViewRef}
         javaScriptEnabled
         injectedJavaScript={getCookiesJS}
