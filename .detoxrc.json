@@ -1,0 +1,28 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "skipLegacyWorkersInjection": true,
+
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 13"
+      }
+    }
+  },
+  "apps": {
+    "ios.release": {
+      "name": "mytonies",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/mytonies.app",
+      "build": "xcodebuild -workspace ios/mytonies.xcworkspace -scheme mytonies -sdk iphonesimulator -derivedDataPath ios/build"
+    }
+  },
+  "configurations": {
+    "ios.sim.release": {
+      "device": "simulator",
+      "app": "ios.release"
+    }
+  }
+}
